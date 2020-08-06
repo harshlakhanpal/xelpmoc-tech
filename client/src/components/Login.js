@@ -6,7 +6,7 @@ import axios from "axios";
 // import { login } from "../queries";
 import { useHistory } from "react-router-dom";
 
-const Login = () => {
+const Login = ({ setLoggedIn }) => {
   const history = useHistory();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -21,6 +21,7 @@ const Login = () => {
       console.log(JSON.stringify(data));
       localStorage.setItem("token", JSON.stringify(data.token));
       localStorage.setItem("user", JSON.stringify(data));
+      setLoggedIn(true);
       history.push("/feed");
     } catch (err) {
       console.log(err);
