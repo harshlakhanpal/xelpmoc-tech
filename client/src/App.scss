@@ -1,0 +1,120 @@
+.app {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  max-width: 100%;
+  max-height: 100%;
+  background: whitesmoke;
+
+  .header {
+    position: absolute;
+    top: 5px;
+    width: 95%;
+    background: #0433c1e8;
+    margin: 2%;
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .content {
+    height: 90%;
+    width: 95%;
+    margin: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .feed {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      height: 100%;
+      // margin-top: 12%;
+      .post {
+        width: 90vw;
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        margin-top: 11%;
+      }
+      .post-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border: 1px solid #0433c1e8;
+        .post-user {
+          align-self: flex-end;
+          font-size: 10px;
+        }
+      }
+    }
+    .main,
+    .form {
+      height: 300px;
+      width: 95%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      .title {
+        font-size: 32px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      .button-group {
+        width: 50%;
+        display: flex;
+        justify-content: space-evenly;
+      }
+    }
+  }
+}
+.input {
+  box-sizing: border-box;
+  border: 1px solid #0433c1e8;
+  width: 100%;
+  padding: 16px 20px;
+  margin-bottom: 12px;
+  font-size: 16px;
+  &:focus {
+    outline: none;
+  }
+}
+
+.button {
+  outline: none;
+  display: inline-block;
+  width: max-content;
+  border: 2px solid #0433c1e8;
+  cursor: pointer;
+  transition: 0.4;
+  color: white;
+  font-size: 0.7rem;
+  padding: 12px 20px;
+  border-radius: 2px;
+  background: #0433c1e8;
+  height: max-content;
+  max-width: 350px;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.neumorphic-inset {
+  box-shadow: -15px -15px 15px rgba(255, 255, 255, 0.2),
+    15px 15px 15px rgba(0, 0, 0, 0.2),
+    inset -5px -5px 5px rgba(255, 255, 255, 0.2),
+    inset 5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.neumorphic {
+  box-shadow: -15px -15px 15px rgba(255, 255, 255, 0.2),
+    15px 15px 15px rgba(0, 0, 0, 0.2);
+}
