@@ -1,7 +1,5 @@
 const express = require("express");
-const router = require("express").Router();
 const jwt = require("jsonwebtoken");
-const expressJwt = require("express-jwt");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const app = express();
@@ -13,14 +11,6 @@ const signToken = (id) => jwt.sign({ id }, "secrettoken");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cors());
-app.get("/", (req, res) => {
-  res.send("Working");
-});
-
-app.get("/check", async (req, res) => {
-  const user = await db("users").where({ id: req.body.id });
-  res.send({ user });
-});
 
 app.get("/posts", async (req, res) => {
   const posts = await db("posts");
@@ -48,16 +38,6 @@ app.post("/login", async (req, res) => {
 });
 
 app.post("/register", async (req, res) => {
-  // const data = _.pick(req.body, [
-  //   "name",
-  //   "username",
-  //   "password",
-  //   "email",
-  //   "mobile",
-  // ]);
-  // const { error } = Joi.validate(data, RegisterSchemaValidator);
-  // if (error) return res.status(400).send(error.details[0].message);
-
   const { body } = req;
   const { mobile, email } = body;
 
