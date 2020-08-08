@@ -8,7 +8,7 @@ const Post = ({ fetchPosts }) => {
 
   const handlePost = async () => {
     const userName = JSON.parse(localStorage.getItem("user")).name;
-    console.log(userName);
+    //  console.log(userName);
     await axios.post("http://localhost:9000/post", { content, userName });
     setContent("");
     fetchPosts();

@@ -14,7 +14,7 @@ const Feed = () => {
   const fetchPosts = async () => {
     const { data } = await axios.get("http://localhost:9000/posts");
     setPosts(data);
-    console.log(data);
+    //  console.log(data);
   };
   return (
     <div className="feed">

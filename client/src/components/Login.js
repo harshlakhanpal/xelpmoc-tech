@@ -17,8 +17,8 @@ const Login = ({ setLoggedIn }) => {
         email,
         password,
       });
-      console.log(data);
-      console.log(JSON.stringify(data));
+      // console.log(data);
+      // console.log(JSON.stringify(data));
       localStorage.setItem("token", JSON.stringify(data.token));
       localStorage.setItem("user", JSON.stringify(data));
       setLoggedIn(true);
